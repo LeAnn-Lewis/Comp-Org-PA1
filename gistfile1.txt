@@ -1,0 +1,27 @@
+.data
+    message: .asciiz "String: "
+    userInput: .space 8
+    
+.text
+   main: 
+        #Gets user input as text
+        li $v0, 8                   #initializing main
+        la $a0, userInput           #loading space for userInput and storing it in $a0
+        li $a1, 8                   #telling the system the maximum length of the text ebign entered.
+        syscall                     #Execution
+        
+        #displays the message to enter the string
+        li $v0, 4
+        la $a0, message
+        syscall
+        
+        #displays the user input
+        li $v0, 4
+        la $a0, userInput
+        syscall
+        
+    
+    
+   #This is the end of main
+   li $v0, 10
+   syscall
