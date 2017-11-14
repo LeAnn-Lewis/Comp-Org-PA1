@@ -20,7 +20,7 @@
         la $a0, userInput
         syscall
         
-    
+        beq $a0,
     
    #This is the end of main
    li $v0, 10
